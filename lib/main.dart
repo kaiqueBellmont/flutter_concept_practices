@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../components/accordion2.dart';
+import '../components/custom_accordion.dart';
 import '../components/text_container.dart';
 
 void main() {
@@ -16,11 +16,12 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        primaryColor: const Color.fromRGBO(94, 14, 65, 1),
-        hintColor: const Color.fromRGBO(255, 32, 78, 1),
+        primaryColor: const Color(0xFF043875),
+        hintColor: const Color(0xFF0468D7),
+        splashColor: Color(0xFFe7f8ff),
         brightness: Brightness.dark,
         appBarTheme: const AppBarTheme(
-          backgroundColor: Color.fromRGBO(94, 14, 65, 1),
+          backgroundColor: Color(0xFF043875),
         ),
         textTheme: ThemeData.dark().textTheme.copyWith(
               titleLarge: const TextStyle(
@@ -42,6 +43,13 @@ class MyHomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        toolbarHeight: 40,
+        elevation: 1,
+        shape: const RoundedRectangleBorder(
+          borderRadius: BorderRadius.vertical(
+            bottom: Radius.circular(30),
+          ),
+        ),
         centerTitle: true,
         leading: const Icon(Icons.menu),
         title: Text(
@@ -58,7 +66,10 @@ class MyHomePage extends StatelessWidget {
           ),
           Expanded(
             child: SingleChildScrollView(
-              child: CustomAccordion(),
+              child: CustomAccordion(
+                title: 'Basic Widgets',
+                icon: Icons.widgets,
+              ),
             ),
           ),
         ],

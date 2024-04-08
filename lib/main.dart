@@ -18,12 +18,12 @@ class MyApp extends StatelessWidget {
       routes: Routes.getRoutes(), // Correct registration
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        primaryColor: const Color(0xFF043875),
+        primaryColor: Colors.blue,
         hintColor: const Color(0xFF0468D7),
         splashColor: Color(0xFFe7f8ff),
         brightness: Brightness.dark,
         appBarTheme: const AppBarTheme(
-          backgroundColor: Color(0xFF043875),
+          backgroundColor: Colors.blue,
         ),
         textTheme: ThemeData.dark().textTheme.copyWith(
               titleLarge: const TextStyle(
@@ -45,11 +45,11 @@ class MyHomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        toolbarHeight: 40,
+        toolbarHeight: 90,
         elevation: 1,
         shape: const RoundedRectangleBorder(
           borderRadius: BorderRadius.vertical(
-            bottom: Radius.circular(30),
+            bottom: Radius.circular(50),
           ),
         ),
         centerTitle: true,

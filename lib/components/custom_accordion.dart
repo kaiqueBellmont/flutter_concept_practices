@@ -30,14 +30,13 @@ class CustomAccordion extends StatelessWidget {
           child: Accordion(
               disableScrolling: true,
               headerBorderColor: Colors.white,
-              headerBackgroundColor: Theme.of(context).primaryColor,
-              headerBorderColorOpened: Theme.of(context).hintColor,
+              headerBackgroundColor: Theme.of(context).hintColor,
+              headerBorderColorOpened: Theme.of(context).primaryColor,
               // headerBorderWidth: 1,
-              headerBackgroundColorOpened: Theme.of(context).hintColor,
+              headerBackgroundColorOpened: Theme.of(context).primaryColor,
               contentBackgroundColor: Theme.of(context).canvasColor,
               contentBorderWidth: 3,
               contentHorizontalPadding: 20,
-              openAndCloseAnimation: true,
               headerPadding: const EdgeInsets.symmetric(vertical: 7, horizontal: 15),
               sectionOpeningHapticFeedback: SectionHapticFeedback.heavy,
               sectionClosingHapticFeedback: SectionHapticFeedback.light,
@@ -80,6 +79,7 @@ class CustomAccordionSection extends StatelessWidget {
   Widget build(BuildContext context) {
     return Accordion(
       disableScrolling: true,
+      scaleWhenAnimating: false,
       paddingListTop: 0,
       paddingListBottom: 0,
       maxOpenSections: 1,
@@ -90,8 +90,8 @@ class CustomAccordionSection extends StatelessWidget {
         AccordionSection(
           isOpen: true,
           leftIcon: Icon(Icons.baby_changing_station, color: Theme.of(context).splashColor),
-          headerBackgroundColor: Theme.of(context).primaryColor,
-          headerBackgroundColorOpened: Theme.of(context).hintColor,
+          headerBackgroundColor: Theme.of(context).hintColor,
+          headerBackgroundColorOpened: Theme.of(context).primaryColor,
           header: const Text('Hello World', style: headerStyle),
           content: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -146,8 +146,8 @@ class CustomAccordionSection extends StatelessWidget {
           isOpen: true,
           leftIcon: Icon(Icons.abc, color: Theme.of(context).splashColor),
           header: const Text('Text Widgets', style: headerStyle),
-          headerBackgroundColor: Theme.of(context).primaryColor,
-          headerBackgroundColorOpened: Theme.of(context).hintColor,
+          headerBackgroundColor: Theme.of(context).hintColor,
+          headerBackgroundColorOpened: Theme.of(context).primaryColor,
           contentBorderColor: Colors.black54,
           content: ElevatedButton(
             style: ElevatedButton.styleFrom(

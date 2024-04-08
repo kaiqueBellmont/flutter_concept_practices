@@ -1,6 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:accordion/accordion.dart';
 import 'package:accordion/controllers.dart';
+import 'package:url_launcher/url_launcher.dart';
+
+Future<void> _launchUrl(url) async {
+  if (!await launchUrl(url)) {
+    throw Exception('Could not launch $url');
+  }
+}
 
 class CustomAccordion extends StatelessWidget {
   final String title;
@@ -81,7 +88,7 @@ class CustomAccordionSection extends StatelessWidget {
       children: [
         AccordionSection(
           isOpen: true,
-          leftIcon: Icon(Icons.abc_sharp, color: Theme.of(context).splashColor),
+          leftIcon: Icon(Icons.baby_changing_station, color: Theme.of(context).splashColor),
           headerBackgroundColor: Theme.of(context).primaryColor,
           headerBackgroundColorOpened: Theme.of(context).hintColor,
           header: const Text('Hello World', style: headerStyle),
@@ -89,15 +96,26 @@ class CustomAccordionSection extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
               ElevatedButton(
+                onPressed: () {},
                 style: ElevatedButton.styleFrom(
                   foregroundColor: Theme.of(context).splashColor,
                 ),
-                onPressed: () {},
-                child: const Row(
+                child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Text('Hello World'),
-                    Icon(Icons.arrow_forward),
+                    Flexible(
+                      child: FittedBox(
+                        fit: BoxFit.scaleDown,
+                        child: Text(
+                          'Flutter Hello Word',
+                          style: TextStyle(
+                            fontSize: 16,
+                            color: Theme.of(context).splashColor,
+                          ), // Defina o tamanho da fonte inicial
+                        ),
+                      ),
+                    ),
+                    const Icon(Icons.arrow_forward),
                   ],
                 ),
               ),
@@ -106,13 +124,13 @@ class CustomAccordionSection extends StatelessWidget {
                   foregroundColor: Theme.of(context).splashColor,
                 ),
                 onPressed: () {
-                  // Adicione aqui o código que deseja executar quando o botão 3 for pressionado
+                  _launchUrl(Uri.parse('https://docs.flutter.dev/ui'));
                 },
                 child: const Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text('Official Docs'),
-                    Icon(Icons.arrow_forward), // Ícone que será exibido à direita do botão
+                    Icon(Icons.arrow_forward),
                   ],
                 ),
               ),
@@ -128,11 +146,20 @@ class CustomAccordionSection extends StatelessWidget {
           headerBackgroundColor: Theme.of(context).primaryColor,
           headerBackgroundColorOpened: Theme.of(context).hintColor,
           contentBorderColor: Colors.black54,
-          content: const Row(
-            children: [
-              Icon(Icons.compare_rounded, size: 120, color: Colors.orangeAccent),
-              Flexible(flex: 1, child: Text(loremIpsum, style: contentStyle)),
-            ],
+          content: ElevatedButton(
+            style: ElevatedButton.styleFrom(
+              foregroundColor: Theme.of(context).splashColor,
+            ),
+            onPressed: () {
+              _launchUrl(Uri.parse('https://docs.flutter.dev/development/ui/widgets/text'));
+            },
+            child: const Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text('Official Docs'),
+                Icon(Icons.arrow_forward), // Ícone que será exibido à direita do botão
+              ],
+            ),
           ),
         ),
       ],

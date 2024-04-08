@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '../components/custom_accordion.dart';
 import '../components/text_container.dart';
+import '../routes/routes.dart';
 
 void main() {
   runApp(
@@ -14,6 +15,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      routes: Routes.getRoutes(), // Correct registration
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         primaryColor: const Color(0xFF043875),

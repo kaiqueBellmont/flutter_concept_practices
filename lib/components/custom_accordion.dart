@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:accordion/accordion.dart';
 import 'package:accordion/controllers.dart';
 import 'package:url_launcher/url_launcher.dart';
+import '../routes/routes.dart';
 
 Future<void> _launchUrl(url) async {
   if (!await launchUrl(url)) {
@@ -96,7 +97,9 @@ class CustomAccordionSection extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
               ElevatedButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.pushNamed(context, Routes.helloWorld_1);
+                },
                 style: ElevatedButton.styleFrom(
                   foregroundColor: Theme.of(context).splashColor,
                 ),

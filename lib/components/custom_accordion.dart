@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:accordion/accordion.dart';
 import 'package:accordion/controllers.dart';
+import 'package:flutter_concept_practices/pages/widgets/hello_word.dart';
 import 'package:url_launcher/url_launcher.dart';
 import '../routes/routes.dart';
 
@@ -98,7 +99,20 @@ class CustomAccordionSection extends StatelessWidget {
             children: [
               ElevatedButton(
                 onPressed: () {
-                  Navigator.pushNamed(context, Routes.helloWorld_1);
+                  Navigator.of(context).push(
+                    PageRouteBuilder(
+                      transitionDuration: const Duration(
+                          milliseconds: 500), // Duração da transição em milissegundos
+                      pageBuilder: (context, animation, secondaryAnimation) =>
+                          const HelloWorld(), // Tela a ser exibida
+                      transitionsBuilder: (context, animation, secondaryAnimation, child) {
+                        return FadeTransition(
+                          opacity: animation,
+                          child: child,
+                        );
+                      },
+                    ),
+                  );
                 },
                 style: ElevatedButton.styleFrom(
                   foregroundColor: Theme.of(context).splashColor,

@@ -40,7 +40,7 @@ class MyMainApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       routes: {
-        AppRoutes.home: (ctx) => const MyHomePage(),
+        AppRoutes.home: (ctx) => const HomePage(),
         AppRoutes.helloWord: (ctx) => const HelloWorld(),
       },
       theme: ThemeData(
@@ -59,7 +59,7 @@ class MyMainApp extends StatelessWidget {
               ),
             ),
       ),
-      home: const MyHomePage(),
+      home: const HomePage(),
     );
   }
 }

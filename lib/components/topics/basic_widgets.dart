@@ -22,7 +22,7 @@ class BasicWidgetsSection extends StatelessWidget {
       headerPadding: const EdgeInsets.symmetric(vertical: 7, horizontal: 15),
       children: [
         AccordionSection(
-          isOpen: true,
+          isOpen: false,
           leftIcon: Icon(Icons.baby_changing_station, color: Theme.of(context).splashColor),
           headerBackgroundColor: Theme.of(context).hintColor,
           headerBackgroundColorOpened: Theme.of(context).primaryColor,
@@ -92,7 +92,7 @@ class BasicWidgetsSection extends StatelessWidget {
           contentBorderColor: Colors.black54,
         ),
         AccordionSection(
-          isOpen: true,
+          isOpen: false,
           leftIcon: Icon(Icons.abc, color: Theme.of(context).splashColor),
           header: const Text('Text Widgets', style: headerStyle),
           headerBackgroundColor: Theme.of(context).hintColor,

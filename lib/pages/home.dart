@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_concept_practices/components/custom_accordion.dart';
 import 'package:flutter_concept_practices/components/text_container.dart';
+import '../routes/routes.dart';
 
-class MyHomePage extends StatelessWidget {
-  const MyHomePage({Key? key}) : super(key: key);
+class HomePage extends StatelessWidget {
+  const HomePage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -18,10 +19,28 @@ class MyHomePage extends StatelessWidget {
         ),
         centerTitle: true,
         leading: const Icon(Icons.menu),
-        title: Text(
-          'Flutter Learning',
-          textAlign: TextAlign.center,
-          style: Theme.of(context).textTheme.titleLarge,
+        title: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text(
+              'Flutter Learning',
+              textAlign: TextAlign.center,
+              style: Theme.of(context).textTheme.titleLarge,
+            ),
+            const SizedBox(width: 50), // Espaço entre o texto e o ícone
+            GestureDetector(
+              onTap: () {
+                Navigator.pushNamedAndRemoveUntil(
+                  context,
+                  AppRoutes.home,
+                  (route) => false,
+                );
+              },
+              child: const Icon(
+                Icons.home,
+              ),
+            ), // Ícone de home com ação de navegação
+          ],
         ),
       ),
       body: const Column(

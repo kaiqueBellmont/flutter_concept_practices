@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_concept_practices/pages/home.dart';
-import 'package:flutter_concept_practices/pages/widgets/hello_word.dart';
+import 'package:flutter_concept_practices/pages/basic_widgets/hello_word.dart';
 import '../routes/routes.dart';
 
 void main() {
@@ -15,11 +15,34 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: Scaffold(
+        body: Container(
+          decoration: const BoxDecoration(
+            border: Border(
+              left: BorderSide(width: 1.0, color: Colors.blue),
+              right: BorderSide(width: 1.0, color: Colors.blue),
+              bottom: BorderSide(width: 1.0, color: Colors.blue),
+            ),
+          ),
+          child: const MyMainApp(),
+        ),
+      ),
+    );
+  }
+}
+
+class MyMainApp extends StatelessWidget {
+  const MyMainApp({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
       routes: {
         AppRoutes.home: (ctx) => const MyHomePage(),
         AppRoutes.helloWord: (ctx) => const HelloWorld(),
       },
-      debugShowCheckedModeBanner: false,
       theme: ThemeData(
         primaryColor: Colors.blue,
         hintColor: const Color(0xFF0468D7),

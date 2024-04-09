@@ -1,4 +1,4 @@
 class AppRoutes {
-  static const home = '/pages/home';
-  static const helloWord = '/pages/widgets/hello_word';
+  static const home = '/home';
+  static const helloWord = '/widgets/hello_word';
 }

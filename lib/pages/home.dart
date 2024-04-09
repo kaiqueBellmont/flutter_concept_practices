@@ -32,7 +32,7 @@ class MyHomePage extends StatelessWidget {
           ),
           Expanded(
             child: SingleChildScrollView(
-              child: CustomAccordion(
+              child: MainCustomAccordion(
                 title: 'Basic Widgets',
                 icon: Icons.widgets,
               ),

@@ -2,9 +2,9 @@
     <application
         android:enableOnBackInvokedCallback="true"
 
-        android:label="flutter_concept_practices"
+        android:label="Learn Flutter By KC"
         android:name="${applicationName}"
-        android:icon="@mipmap/ic_launcher">
+        android:icon="@mipmap/icon">
         <activity
             android:name=".MainActivity"
             android:exported="true"

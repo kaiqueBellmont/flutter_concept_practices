@@ -25,7 +25,6 @@ class MainCustomAccordion extends StatelessWidget {
               headerBorderColor: Colors.white,
               headerBackgroundColor: Theme.of(context).hintColor,
               headerBorderColorOpened: Theme.of(context).primaryColor,
-              // headerBorderWidth: 1,
               headerBackgroundColorOpened: Theme.of(context).primaryColor,
               contentBackgroundColor: Theme.of(context).canvasColor,
               contentBorderWidth: 3,

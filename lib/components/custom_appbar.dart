@@ -22,22 +22,16 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
       ),
       centerTitle: true,
       leading: const Icon(Icons.menu),
-      title: Row(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Flexible(
-            child: FittedBox(
-              fit: BoxFit.scaleDown,
-              child: Text(
-                title,
-                textAlign: TextAlign.center,
-                style: Theme.of(context).textTheme.titleLarge,
-              ),
-            ),
-          ),
-          const SizedBox(width: 20), // Espaço entre o texto e o ícone
-          GestureDetector(
-            onTap: () {
+      title: Text(
+        title,
+        textAlign: TextAlign.center,
+        style: Theme.of(context).textTheme.titleLarge,
+      ),
+      actions: [
+        Padding(
+          padding: const EdgeInsets.only(right: 10),
+          child: IconButton(
+            onPressed: () {
               Navigator.of(context).pushAndRemoveUntil(
                 PageRouteBuilder(
                   transitionDuration: const Duration(milliseconds: 200),
@@ -52,12 +46,10 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
                 (route) => false,
               );
             },
-            child: const Icon(
-              Icons.home,
-            ),
-          ), // Ícone de home com ação de navegação
-        ],
-      ),
+            icon: const Icon(Icons.home, color: Colors.white),
+          ),
+        ),
+      ],
     );
   }
 }

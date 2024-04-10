@@ -1,3 +1,5 @@
+// This class is used to create a custom accordion with the help of the accordion package.
+
 import 'package:flutter/material.dart';
 import 'package:accordion/accordion.dart';
 import 'package:accordion/controllers.dart';

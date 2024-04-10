@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_concept_practices/components/custom_appbar.dart';
-import 'package:flutter_concept_practices/routes/routes.dart';
+import 'package:flutter_concept_practices/components/appbar/custom_appbar.dart';
+import 'package:flutter_concept_practices/utils/routes/routes.dart';
 
 class HelloWorld extends StatelessWidget {
   const HelloWorld({Key? key}) : super(key: key);

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_concept_practices/components/custom_appbar.dart';
-import 'package:flutter_concept_practices/components/main_custom_accordion.dart';
-import 'package:flutter_concept_practices/components/text_container.dart';
-import '../routes/routes.dart';
+import 'package:flutter_concept_practices/components/appbar/custom_appbar.dart';
+import 'package:flutter_concept_practices/components/accordion/main_custom_accordion.dart';
+import 'package:flutter_concept_practices/components/texts/text_container.dart';
+import '../utils/routes/routes.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);

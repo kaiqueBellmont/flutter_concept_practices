@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import './subtopics_content.dart';
+import 'subtopics_content.dart';
 
 class AccordionHeader extends StatelessWidget {
   final String title;

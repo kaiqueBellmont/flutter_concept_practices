@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_concept_practices/pages/home.dart';
 import 'package:flutter_concept_practices/pages/basic_widgets/hello_word.dart';
-import '../routes/routes.dart';
+import 'utils/routes/routes.dart';
 
 void main() {
   runApp(

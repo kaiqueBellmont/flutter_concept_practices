@@ -23,13 +23,14 @@ class MainCustomAccordion extends StatelessWidget {
         SizedBox(
           width: MediaQuery.of(context).size.width * 0.9,
           child: Accordion(
+              maxOpenSections: 1,
               disableScrolling: true,
-              headerBorderColor: Colors.white,
+              scaleWhenAnimating: true,
+              headerBorderRadius: 0,
+              contentBorderRadius: 20,
               headerBackgroundColor: Theme.of(context).hintColor,
-              headerBorderColorOpened: Theme.of(context).primaryColor,
               headerBackgroundColorOpened: Theme.of(context).primaryColor,
               contentBackgroundColor: Theme.of(context).canvasColor,
-              contentBorderWidth: 3,
               contentHorizontalPadding: 20,
               headerPadding: const EdgeInsets.symmetric(vertical: 7, horizontal: 15),
               sectionOpeningHapticFeedback: SectionHapticFeedback.heavy,

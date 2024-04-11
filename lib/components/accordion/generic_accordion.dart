@@ -17,10 +17,12 @@ class GenericAccordion extends StatelessWidget {
   Widget build(BuildContext context) {
     return Accordion(
       disableScrolling: true,
-      scaleWhenAnimating: false,
+      scaleWhenAnimating: true,
       paddingListTop: 0,
+      headerBorderRadius: 20,
       paddingListBottom: 0,
       maxOpenSections: 1,
+      initialOpeningSequenceDelay: 2,
       contentBackgroundColor: Theme.of(context).canvasColor,
       headerBackgroundColorOpened: Theme.of(context).hintColor,
       headerPadding: const EdgeInsets.symmetric(vertical: 7, horizontal: 15),

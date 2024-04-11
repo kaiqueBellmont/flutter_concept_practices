@@ -1,9 +1,27 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_concept_practices/components/appbar/custom_appbar.dart';
-import 'package:flutter_concept_practices/utils/routes/routes.dart';
+import 'package:flutter_concept_practices/pages/code_syntax_highlight.dart';
 
 class HelloWorld extends StatelessWidget {
   const HelloWorld({Key? key}) : super(key: key);
+
+  static const String code = '''
+import 'package:flutter/material.dart';
+
+class HelloWorld extends StatelessWidget {
+  const HelloWorld({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    //  hello app with scaffold
+    return const Scaffold(
+      body: Center(
+        child: Text('Hello World!'),
+      ),
+    );
+  }
+}
+''';
 
   @override
   Widget build(BuildContext context) {
@@ -35,8 +53,21 @@ class HelloWorld extends StatelessWidget {
                       foregroundColor: Colors.white,
                     ),
                     onPressed: () {
-                      Navigator.pushNamed(
-                          context, AppRoutes.syntaxHyghlight); // Navegando para a segunda página
+                      Navigator.of(context).push(
+                        PageRouteBuilder(
+                          transitionDuration: Duration(milliseconds: 200),
+                          pageBuilder: (context, animation, secondaryAnimation) =>
+                              const CodeHighlighterPage(
+                            code: code,
+                          ),
+                          transitionsBuilder: (context, animation, secondaryAnimation, child) {
+                            return FadeTransition(
+                              opacity: animation,
+                              child: child,
+                            );
+                          },
+                        ),
+                      );
                     },
                     child: const Text('View the code'),
                   ),

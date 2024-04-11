@@ -8,24 +8,6 @@ import 'package:syntax_highlight/syntax_highlight.dart';
 
 late final Highlighter _dartDarkHighlighter;
 
-const _code = '''
-import 'package:flutter/material.dart';
-
-class HelloWorld extends StatelessWidget {
-  const HelloWorld({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    //  hello app with scaffold
-    return const Scaffold(
-      body: Center(
-        child: Text('Hello World!'),
-      ),
-    );
-  }
-}
-''';
-
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Highlighter.initialize([
@@ -78,9 +60,7 @@ class MyMainApp extends StatelessWidget {
       routes: {
         AppRoutes.home: (ctx) => const HomePage(),
         AppRoutes.helloWord: (ctx) => const HelloWorld(),
-        AppRoutes.syntaxHyghlight: (ctx) => const Code(
-              code: _code,
-            ),
+        AppRoutes.syntaxHyghlight: (ctx) => const CodeHighlighterPage(),
       },
       theme: ThemeData(
         primaryColor: Colors.blue,

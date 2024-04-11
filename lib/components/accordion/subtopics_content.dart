@@ -18,7 +18,7 @@ class SubTopicContent extends StatelessWidget {
     return route != null && docLink == null
         ? ElevatedButton(
             onPressed: () {
-              Navigator.of(context).pushAndRemoveUntil(
+              Navigator.of(context).push(
                 PageRouteBuilder(
                   transitionDuration: const Duration(milliseconds: 200),
                   pageBuilder: (context, animation, secondaryAnimation) => route!,
@@ -29,7 +29,6 @@ class SubTopicContent extends StatelessWidget {
                     );
                   },
                 ),
-                (route) => false,
               );
             },
             style: ElevatedButton.styleFrom(

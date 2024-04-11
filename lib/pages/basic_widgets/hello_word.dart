@@ -7,11 +7,44 @@ class HelloWorld extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    //  hello app with scaffold
-    return const Scaffold(
-      appBar: CustomAppBar(title: "01: Flutter Hello World"),
-      body: Center(
-        child: Text('Hello World!'),
+    return Scaffold(
+      appBar: const CustomAppBar(title: "01: Flutter Hello World"),
+      body: Stack(
+        children: [
+          const Center(
+            child: Text('Hello World!'),
+          ),
+          Positioned(
+            bottom: 20,
+            left: 20, // Posição base dos botões
+            right: 20,
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 10), // Padding horizontal
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween, // Espaço entre os botões
+                children: [
+                  IconButton(
+                    icon: const Icon(Icons.arrow_back), // Ícone de seta para a esquerda
+                    onPressed: () {
+                      Navigator.pop(context); // Navegação de volta
+                    },
+                  ),
+                  ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.blue,
+                      foregroundColor: Colors.white,
+                    ),
+                    onPressed: () {
+                      Navigator.pushNamed(
+                          context, AppRoutes.syntaxHyghlight); // Navegando para a segunda página
+                    },
+                    child: const Text('View the code'),
+                  ),
+                ],
+              ),
+            ),
+          ),
+        ],
       ),
     );
   }

@@ -1,11 +1,47 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_concept_practices/pages/code_syntax_highlight.dart';
 import 'package:flutter_concept_practices/pages/home.dart';
 import 'package:flutter_concept_practices/pages/basic_widgets/hello_word.dart';
-import 'utils/routes/routes.dart';
+import 'package:flutter_concept_practices/utils/routes/routes.dart';
+import 'package:provider/provider.dart';
+import 'package:syntax_highlight/syntax_highlight.dart';
 
-void main() {
+late final Highlighter _dartDarkHighlighter;
+
+const _code = '''
+import 'package:flutter/material.dart';
+
+class HelloWorld extends StatelessWidget {
+  const HelloWorld({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    //  hello app with scaffold
+    return const Scaffold(
+      body: Center(
+        child: Text('Hello World!'),
+      ),
+    );
+  }
+}
+''';
+
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Highlighter.initialize([
+    'dart',
+  ]);
+  var darkTheme = await HighlighterTheme.loadDarkTheme();
+  var dartDarkHighlighter = Highlighter(
+    language: 'dart',
+    theme: darkTheme,
+  );
+
   runApp(
-    const MyApp(),
+    Provider.value(
+      value: dartDarkHighlighter,
+      child: const MyApp(),
+    ),
   );
 }
 
@@ -42,6 +78,9 @@ class MyMainApp extends StatelessWidget {
       routes: {
         AppRoutes.home: (ctx) => const HomePage(),
         AppRoutes.helloWord: (ctx) => const HelloWorld(),
+        AppRoutes.syntaxHyghlight: (ctx) => const Code(
+              code: _code,
+            ),
       },
       theme: ThemeData(
         primaryColor: Colors.blue,

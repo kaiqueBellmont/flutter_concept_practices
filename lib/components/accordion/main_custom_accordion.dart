@@ -26,7 +26,7 @@ class MainCustomAccordion extends StatelessWidget {
               maxOpenSections: 1,
               disableScrolling: true,
               scaleWhenAnimating: true,
-              headerBorderRadius: 0,
+              headerBorderRadius: 20,
               contentBorderRadius: 20,
               headerBackgroundColor: Theme.of(context).hintColor,
               headerBackgroundColorOpened: Theme.of(context).primaryColor,

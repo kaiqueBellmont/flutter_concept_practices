@@ -22,8 +22,13 @@ class BasicWidgetsSection extends StatelessWidget {
               route: HelloWorld(),
             ),
             SubTopicContent(
+              subTopicTitle: "Video",
+              link:
+                  'https://www.youtube.com/watch?v=1ukSR1GRtMU&list=PL4cUxeGkcC9jLYyp2Aoh6hcWuxFDX6PBJ',
+            ),
+            SubTopicContent(
               subTopicTitle: "Official documentation",
-              docLink: 'https://docs.flutter.dev/ui',
+              link: 'https://docs.flutter.dev/ui',
             ),
           ]),
         ),
@@ -34,7 +39,7 @@ class BasicWidgetsSection extends StatelessWidget {
           content: const AccordionContent(subtopicsContent: [
             SubTopicContent(
               subTopicTitle: 'Text Widgets',
-              docLink: 'https://docs.flutter.dev/development/ui/widgets/text',
+              link: 'https://docs.flutter.dev/development/ui/widgets/text',
             )
           ]),
         )

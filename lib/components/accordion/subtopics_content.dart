@@ -3,19 +3,19 @@ import 'package:flutter_concept_practices/utils/functions/launch_url.dart';
 
 class SubTopicContent extends StatelessWidget {
   final String subTopicTitle;
-  final String? docLink;
+  final String? link;
   final Widget? route;
 
   const SubTopicContent({
     super.key,
     required this.subTopicTitle,
-    this.docLink,
+    this.link,
     this.route,
   });
 
   @override
   Widget build(BuildContext context) {
-    return route != null && docLink == null
+    return route != null && link == null
         ? ElevatedButton(
             onPressed: () {
               Navigator.of(context).push(
@@ -58,7 +58,7 @@ class SubTopicContent extends StatelessWidget {
               foregroundColor: Theme.of(context).splashColor,
             ),
             onPressed: () {
-              launchToUrl(Uri.parse(docLink!));
+              launchToUrl(Uri.parse(link!));
             },
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,

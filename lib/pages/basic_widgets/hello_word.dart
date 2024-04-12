@@ -27,52 +27,49 @@ class HelloWorld extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: const CustomAppBar(title: "01: Flutter Hello World"),
-      body: Stack(
+      body: Column(
         children: [
-          const Center(
-            child: Text('Hello World!'),
+          const Expanded(
+            child: Center(
+              child: Text('Hello World!'),
+            ),
           ),
-          Positioned(
-            bottom: 20,
-            left: 20, // Posição base dos botões
-            right: 20,
-            child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 10), // Padding horizontal
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween, // Espaço entre os botões
-                children: [
-                  IconButton(
-                    icon: const Icon(Icons.arrow_back), // Ícone de seta para a esquerda
-                    onPressed: () {
-                      Navigator.pop(context); // Navegação de volta
-                    },
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween, // Espaço entre os botões
+              children: [
+                IconButton(
+                  icon: const Icon(Icons.arrow_back), // Ícone de seta para a esquerda
+                  onPressed: () {
+                    Navigator.pop(context); // Navegação de volta
+                  },
+                ),
+                ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.blue,
+                    foregroundColor: Colors.white,
                   ),
-                  ElevatedButton(
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.blue,
-                      foregroundColor: Colors.white,
-                    ),
-                    onPressed: () {
-                      Navigator.of(context).push(
-                        PageRouteBuilder(
-                          transitionDuration: Duration(milliseconds: 200),
-                          pageBuilder: (context, animation, secondaryAnimation) =>
-                              const CodeHighlighterPage(
-                            code: code,
-                          ),
-                          transitionsBuilder: (context, animation, secondaryAnimation, child) {
-                            return FadeTransition(
-                              opacity: animation,
-                              child: child,
-                            );
-                          },
+                  onPressed: () {
+                    Navigator.of(context).push(
+                      PageRouteBuilder(
+                        transitionDuration: const Duration(milliseconds: 200),
+                        pageBuilder: (context, animation, secondaryAnimation) =>
+                            const CodeHighlighterPage(
+                          code: code,
                         ),
-                      );
-                    },
-                    child: const Text('View the code'),
-                  ),
-                ],
-              ),
+                        transitionsBuilder: (context, animation, secondaryAnimation, child) {
+                          return FadeTransition(
+                            opacity: animation,
+                            child: child,
+                          );
+                        },
+                      ),
+                    );
+                  },
+                  child: const Text('View the code'),
+                ),
+              ],
             ),
           ),
         ],

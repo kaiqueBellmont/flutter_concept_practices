@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_concept_practices/components/accordion/generic_accordion_props.dart';
 import 'package:flutter_concept_practices/components/accordion/generic_accordion_section.dart';
+import 'package:flutter_concept_practices/pages/basic_widgets/02_text_widgets.dart';
 import 'package:flutter_concept_practices/pages/basic_widgets/hello_word.dart';
 import '../accordion/generic_accordion.dart';
 import '../accordion/subtopics_content.dart';
@@ -38,7 +39,11 @@ class BasicWidgetsSection extends StatelessWidget {
           ),
           content: const AccordionContent(subtopicsContent: [
             SubTopicContent(
-              subTopicTitle: 'Text Widgets',
+              subTopicTitle: 'Text widget',
+              route: TextWidgets(),
+            ),
+            SubTopicContent(
+              subTopicTitle: 'Official documentation',
               link: 'https://docs.flutter.dev/development/ui/widgets/text',
             )
           ]),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_concept_practices/pages/basic_widgets/02_text_widgets.dart';
 import 'package:flutter_concept_practices/pages/code_syntax_highlight.dart';
 import 'package:flutter_concept_practices/pages/home.dart';
 import 'package:flutter_concept_practices/pages/basic_widgets/hello_word.dart';
@@ -60,6 +61,7 @@ class MyMainApp extends StatelessWidget {
       routes: {
         AppRoutes.home: (ctx) => const HomePage(),
         AppRoutes.helloWord: (ctx) => const HelloWorld(),
+        AppRoutes.textWidgets: (ctx) => const TextWidgets(),
         AppRoutes.syntaxHyghlight: (ctx) => const CodeHighlighterPage(),
       },
       theme: ThemeData(

@@ -109,7 +109,7 @@ class TextWidgets extends StatelessWidget {
                       ),
                     );
                   },
-                  child: const Text('View the code'),
+                  child: const Text('View the code.'),
                 ),
               ],
             ),

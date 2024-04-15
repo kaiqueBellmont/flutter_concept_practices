@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_concept_practices/components/accordion/generic_accordion_props.dart';
 import 'package:flutter_concept_practices/components/accordion/generic_accordion_section.dart';
 import 'package:flutter_concept_practices/pages/basic_widgets/02_text_widgets.dart';
-import 'package:flutter_concept_practices/pages/basic_widgets/hello_word.dart';
+import 'package:flutter_concept_practices/pages/basic_widgets/01_hello_word.dart';
 import '../accordion/generic_accordion.dart';
 import '../accordion/subtopics_content.dart';
 

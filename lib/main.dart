@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_concept_practices/pages/basic_widgets/02_text_widgets.dart';
 import 'package:flutter_concept_practices/pages/code_syntax_highlight.dart';
 import 'package:flutter_concept_practices/pages/home.dart';
-import 'package:flutter_concept_practices/pages/basic_widgets/hello_word.dart';
+import 'package:flutter_concept_practices/pages/basic_widgets/01_hello_word.dart';
 import 'package:flutter_concept_practices/utils/routes/routes.dart';
 import 'package:provider/provider.dart';
 import 'package:syntax_highlight/syntax_highlight.dart';

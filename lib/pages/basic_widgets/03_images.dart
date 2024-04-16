@@ -8,15 +8,15 @@ class ImageWidgets extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: CustomAppBar(title: "02: Text Widgets"),
+      appBar: const CustomAppBar(title: "03: Image Widgets"),
       body: Column(
         children: [
           Expanded(
               child: Container(
             alignment: Alignment.center,
             decoration: BoxDecoration(border: Border.all()),
-            child: Image.network(
-              'assets/images/flutter_logo.png',
+            child: Image.asset(
+              'lib/assets/images/dash.png',
               width: 200,
             ),
           )),

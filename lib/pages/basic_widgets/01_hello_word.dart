@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_concept_practices/components/appbar/custom_appbar.dart';
-import 'package:flutter_concept_practices/pages/code_syntax_highlight.dart';
+import 'package:flutter_concept_practices/components/footer/footer.dart';
 
 class HelloWorld extends StatelessWidget {
   const HelloWorld({Key? key}) : super(key: key);
@@ -25,53 +25,16 @@ class HelloWorld extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: const CustomAppBar(title: "01: Flutter Hello World"),
+    return const Scaffold(
+      appBar: CustomAppBar(title: "01: Flutter Hello World"),
       body: Column(
         children: [
-          const Expanded(
+          Expanded(
             child: Center(
               child: Text('Hello World!'),
             ),
           ),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween, // Espaço entre os botões
-              children: [
-                IconButton(
-                  icon: const Icon(Icons.arrow_back), // Ícone de seta para a esquerda
-                  onPressed: () {
-                    Navigator.pop(context); // Navegação de volta
-                  },
-                ),
-                ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.blue,
-                    foregroundColor: Colors.white,
-                  ),
-                  onPressed: () {
-                    Navigator.of(context).push(
-                      PageRouteBuilder(
-                        transitionDuration: const Duration(milliseconds: 200),
-                        pageBuilder: (context, animation, secondaryAnimation) =>
-                            const CodeHighlighterPage(
-                          code: code,
-                        ),
-                        transitionsBuilder: (context, animation, secondaryAnimation, child) {
-                          return FadeTransition(
-                            opacity: animation,
-                            child: child,
-                          );
-                        },
-                      ),
-                    );
-                  },
-                  child: const Text('View the code'),
-                ),
-              ],
-            ),
-          ),
+          CustomFooter(code: code)
         ],
       ),
     );

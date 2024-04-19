@@ -4,6 +4,7 @@ import 'package:flutter_concept_practices/components/accordion/generic_accordion
 import 'package:flutter_concept_practices/pages/basic_widgets/02_text_widgets.dart';
 import 'package:flutter_concept_practices/pages/basic_widgets/01_hello_word.dart';
 import 'package:flutter_concept_practices/pages/basic_widgets/03_images.dart';
+import 'package:flutter_concept_practices/pages/basic_widgets/04_container.dart';
 import '../accordion/generic_accordion.dart';
 import '../accordion/subtopics_content.dart';
 
@@ -65,6 +66,25 @@ class BasicWidgetsSection extends StatelessWidget {
             SubTopicContent(
               subTopicTitle: 'Official documentation',
               link: 'https://api.flutter.dev/flutter/widgets/Image-class.html',
+            )
+          ]),
+        ),
+        GenericAccordionSection(
+          header: const AccordionHeader(
+            title: "Container Widgets",
+          ),
+          content: const AccordionContent(subtopicsContent: [
+            SubTopicContent(
+              subTopicTitle: 'Container widget',
+              route: ContainerWidget(),
+            ),
+            SubTopicContent(
+              subTopicTitle: 'Video',
+              link: 'https://www.youtube.com/watch?v=c1xLMaTUWCY',
+            ),
+            SubTopicContent(
+              subTopicTitle: 'Official documentation',
+              link: 'https://api.flutter.dev/flutter/widgets/Container-class.html',
             )
           ]),
         )

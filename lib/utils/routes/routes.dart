@@ -3,5 +3,6 @@ class AppRoutes {
   static const helloWord = '/hello_word';
   static const textWidgets = '/text_widgets';
   static const imageWidgets = '/image_widgets';
+  static const containerWidgets = '/container_widgets';
   static const syntaxHyghlight = '/code_syntax_highlight';
 }

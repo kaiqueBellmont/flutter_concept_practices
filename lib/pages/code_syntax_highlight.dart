@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_concept_practices/components/appbar/custom_appbar.dart';
-import 'package:flutter_concept_practices/components/texts/text_container.dart';
 import 'package:provider/provider.dart';
 import 'package:syntax_highlight/syntax_highlight.dart';
+import '../components/snackBar/snackBar.dart';
 
 class CodeHighlighterPage extends StatelessWidget {
   final String? code;
@@ -77,16 +77,9 @@ class CodeHighlighter extends StatelessWidget {
 
   void _copyToClipboard(BuildContext context, String code) {
     Clipboard.setData(ClipboardData(text: code));
-    const snackBar = SnackBar(
-      backgroundColor: Colors.blue,
-      behavior: SnackBarBehavior.floating,
-      closeIconColor: Colors.white,
-      showCloseIcon: true,
-      content: Text(
-        'Code copied to clipboard',
-        style: TextStyle(color: Colors.white),
-      ),
+
+    ScaffoldMessenger.of(context).showSnackBar(
+      CustomSnackBar.buildSnackBar('Code copied to clipboard'),
     );
-    ScaffoldMessenger.of(context).showSnackBar(snackBar);
   }
 }

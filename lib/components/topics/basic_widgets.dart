@@ -5,6 +5,7 @@ import 'package:flutter_concept_practices/pages/basic_widgets/02_text_widgets.da
 import 'package:flutter_concept_practices/pages/basic_widgets/01_hello_word.dart';
 import 'package:flutter_concept_practices/pages/basic_widgets/03_images.dart';
 import 'package:flutter_concept_practices/pages/basic_widgets/04_container.dart';
+import 'package:flutter_concept_practices/pages/basic_widgets/05_button_widget.dart';
 import '../accordion/generic_accordion.dart';
 import '../accordion/subtopics_content.dart';
 
@@ -85,6 +86,25 @@ class BasicWidgetsSection extends StatelessWidget {
             SubTopicContent(
               subTopicTitle: 'Official documentation',
               link: 'https://api.flutter.dev/flutter/widgets/Container-class.html',
+            )
+          ]),
+        ),
+        GenericAccordionSection(
+          header: const AccordionHeader(
+            title: "Button Widget",
+          ),
+          content: const AccordionContent(subtopicsContent: [
+            SubTopicContent(
+              subTopicTitle: 'Button widget',
+              route: ButtonWidget(),
+            ),
+            SubTopicContent(
+              subTopicTitle: 'Video',
+              link: 'https://www.youtube.com/watch?v=CSl2Yu2l-hc',
+            ),
+            SubTopicContent(
+              subTopicTitle: 'Official documentation',
+              link: 'https://api.flutter.dev/flutter/material/ElevatedButton-class.html',
             )
           ]),
         )

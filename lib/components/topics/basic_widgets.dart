@@ -107,7 +107,7 @@ class BasicWidgetsSection extends StatelessWidget {
               link: 'https://api.flutter.dev/flutter/material/ElevatedButton-class.html',
             )
           ]),
-        )
+        ),
       ],
     );
   }

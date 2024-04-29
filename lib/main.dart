@@ -61,11 +61,6 @@ class MyMainApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       routes: {
         AppRoutes.home: (ctx) => const HomePage(),
-        AppRoutes.helloWord: (ctx) => const HelloWorld(),
-        AppRoutes.textWidgets: (ctx) => const TextWidgets(),
-        AppRoutes.imageWidgets: (ctx) => const ImageWidgets(),
-        AppRoutes.containerWidgets: (ctx) => const ContainerWidget(),
-        AppRoutes.syntaxHyghlight: (ctx) => const CodeHighlighterPage(),
       },
       theme: ThemeData(
         primaryColor: Colors.blue,

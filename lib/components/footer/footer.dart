@@ -3,8 +3,9 @@ import 'package:flutter_concept_practices/pages/code_syntax_highlight.dart';
 
 class CustomFooter extends StatelessWidget {
   final String code;
+  final bool showCode;
 
-  const CustomFooter({Key? key, required this.code}) : super(key: key);
+  const CustomFooter({Key? key, required this.code, this.showCode = true}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -19,29 +20,32 @@ class CustomFooter extends StatelessWidget {
               Navigator.pop(context);
             },
           ),
-          ElevatedButton(
-            style: ElevatedButton.styleFrom(
-              backgroundColor: Colors.blue,
-              foregroundColor: Colors.white,
-            ),
-            onPressed: () {
-              Navigator.of(context).push(
-                PageRouteBuilder(
-                  transitionDuration: const Duration(milliseconds: 200),
-                  pageBuilder: (context, animation, secondaryAnimation) => CodeHighlighterPage(
-                    code: code,
+          (showCode == true)
+              ? ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.blue,
+                    foregroundColor: Colors.white,
                   ),
-                  transitionsBuilder: (context, animation, secondaryAnimation, child) {
-                    return FadeTransition(
-                      opacity: animation,
-                      child: child,
+                  onPressed: () {
+                    Navigator.of(context).push(
+                      PageRouteBuilder(
+                        transitionDuration: const Duration(milliseconds: 200),
+                        pageBuilder: (context, animation, secondaryAnimation) =>
+                            CodeHighlighterPage(
+                          code: code,
+                        ),
+                        transitionsBuilder: (context, animation, secondaryAnimation, child) {
+                          return FadeTransition(
+                            opacity: animation,
+                            child: child,
+                          );
+                        },
+                      ),
                     );
                   },
-                ),
-              );
-            },
-            child: const Text('View the code.'),
-          ),
+                  child: const Text('View the code'),
+                )
+              : const SizedBox(),
         ],
       ),
     );

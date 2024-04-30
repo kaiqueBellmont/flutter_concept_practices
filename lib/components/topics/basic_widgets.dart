@@ -7,6 +7,7 @@ import 'package:flutter_concept_practices/pages/basic_widgets/03_images.dart';
 import 'package:flutter_concept_practices/pages/basic_widgets/04_container.dart';
 import 'package:flutter_concept_practices/pages/basic_widgets/05_button_widget.dart';
 import 'package:flutter_concept_practices/pages/basic_widgets/06_card_widget.dart';
+import 'package:flutter_concept_practices/pages/basic_widgets/07_column_row_widget.dart';
 import '../accordion/generic_accordion.dart';
 import '../accordion/subtopics_content.dart';
 
@@ -125,6 +126,25 @@ class BasicWidgetsSection extends StatelessWidget {
             SubTopicContent(
               subTopicTitle: 'Official documentation',
               link: 'https://api.flutter.dev/flutter/material/Card-class.html',
+            )
+          ]),
+        ),
+        GenericAccordionSection(
+          header: const AccordionHeader(
+            title: "Column and Row Widgets",
+          ),
+          content: const AccordionContent(subtopicsContent: [
+            SubTopicContent(
+              subTopicTitle: 'Column and Row Widgets',
+              route: ColumnAndRow(),
+            ),
+            SubTopicContent(
+              subTopicTitle: 'Video',
+              link: 'https://www.youtube.com/watch?v=1Iiq4oPCz3k',
+            ),
+            SubTopicContent(
+              subTopicTitle: 'Official documentation',
+              link: 'https://docs.flutter.dev/ui/layout',
             )
           ]),
         ),

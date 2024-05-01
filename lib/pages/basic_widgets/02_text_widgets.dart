@@ -73,7 +73,7 @@ class TextWidgets extends StatelessWidget {
           Expanded(
             child: Container(
               alignment: Alignment.center,
-              child: const Text('This is a Text Widget'),
+              child: const Text('This is a Text Widget  '),
             ),
           ),
           Padding(
